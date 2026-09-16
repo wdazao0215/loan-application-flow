@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  backend:
+    name: Backend
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: "10.0.x"
+
+      - name: Restore
+        run: dotnet restore backend/LoanFlow.slnx
+
+      - name: Build
+        run: dotnet build backend/LoanFlow.slnx --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test backend/LoanFlow.slnx --configuration Release --no-build
+        timeout-minutes: 15
