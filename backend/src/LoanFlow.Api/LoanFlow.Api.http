@@ -1,0 +1,55 @@
+@api = http://localhost:8080
+
+POST {{api}}/api/loan-applications
+Content-Type: application/json
+
+{
+  "firstName": "Ada",
+  "lastName": "Lovelace",
+  "companyName": "Analytical Engines LLC",
+  "address": { "street": "100 Congress Ave", "city": "Austin", "state": "TX", "zipCode": "78701" },
+  "ssn": "521-45-7788",
+  "requestedAmount": 25000
+}
+
+###
+
+POST {{api}}/api/loan-applications
+Content-Type: application/json
+
+{
+  "firstName": "Ada",
+  "lastName": "Lovelace",
+  "companyName": "Analytical Engines LLC",
+  "address": { "street": "500 Commerce St", "city": "Dallas", "state": "TX", "zipCode": "75202" },
+  "ssn": "521457788",
+  "requestedAmount": 40000
+}
+
+###
+
+POST {{api}}/api/loan-applications
+Content-Type: application/json
+
+{
+  "firstName": "Grace",
+  "lastName": "Hopper",
+  "companyName": "Compilers Inc",
+  "address": { "street": "1 Liberty Plaza", "city": "New York", "state": "NY", "zipCode": "10006" },
+  "ssn": "301-22-4455",
+  "requestedAmount": 15000
+}
+
+###
+
+POST {{api}}/api/loan-applications
+Content-Type: application/json
+
+{
+  "firstName": "Alan",
+  "lastName": "Turing",
+  "companyName": "Enigma Labs",
+  "address": { "street": "200 Main St", "city": "Denver", "state": "CO", "zipCode": "80202" },
+  "ssn": "123-45-6789",
+  "requestedAmount": 10000
+}
