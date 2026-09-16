@@ -1,0 +1,6 @@
+.git
+frontend
+external-service
+**/bin
+**/obj
+**/node_modules
